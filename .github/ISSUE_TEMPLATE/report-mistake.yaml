@@ -1,0 +1,32 @@
+name: Report a mistake
+description: ———
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        # Thanks for reporting this mistake!
+
+        Help us replicate and find a fix for the issue by filling in this form.
+
+  - type: input
+    attributes:
+      label: File Path
+      description: |
+        The path to the file in which the mistake exists.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Description
+      description: |
+        What is the mistake?
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Correction
+      description: |
+        What is the correction to be made?
+    validations:
+      required: true
