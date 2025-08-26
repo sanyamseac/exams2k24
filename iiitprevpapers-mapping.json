@@ -1,0 +1,234 @@
+{
+  "semester_to_year": {
+    "Semester 1": "Year1",
+    "Semester 2": "Year1", 
+    "Semester 3": "Year2",
+    "Semester 4": "Year2",
+    "Semester 5": "Year3",
+    "Semester 6": "Year3",
+    "Semester 7": "Year4",
+    "Semester 8": "Year4"
+  },
+  "exam_type_mapping": {
+    "Quizzes": "quiz",
+    "Midsems": "mid1",
+    "Endsems": "end"
+  },
+  "subject_mappings": {
+    "Computer Programming": {
+      "abbreviation": "CPRO",
+      "full_name": "C Programming",
+      "course_type": "CS"
+    },
+    "Computing in Sciences - I": {
+      "abbreviation": "CIS1",
+      "full_name": "Computing in Sciences - I",
+      "course_type": "CS"
+    },
+    "Computing in Sciences - II": {
+      "abbreviation": "CIS2", 
+      "full_name": "Computing in Sciences - II",
+      "course_type": "CS"
+    },
+    "Digital Systems and Microcontrollers": {
+      "abbreviation": "DSM",
+      "full_name": "Digital Systems & Microcontrollers",
+      "course_type": "CS"
+    },
+    "Discrete Structures": {
+      "abbreviation": "DISC",
+      "full_name": "Discrete Structures",
+      "course_type": "CS"
+    },
+    "Data Structures and Algorithms": {
+      "abbreviation": "DSA",
+      "full_name": "Data Structures & Algorithms", 
+      "course_type": "CS"
+    },
+    "Computer Systems and Organisation": {
+      "abbreviation": "CSO",
+      "full_name": "Computer Systems Organisation",
+      "course_type": "CS"
+    },
+    "Intro to Software Systems": {
+      "abbreviation": "ISS",
+      "full_name": "Introduction to Software Systems",
+      "course_type": "CS"
+    },
+    "Linear Algebra": {
+      "abbreviation": "LA",
+      "full_name": "Linear Algebra",
+      "course_type": "CS"
+    },
+    "Real Analysis": {
+      "abbreviation": "RA",
+      "full_name": "Real Analysis", 
+      "course_type": "CS"
+    },
+    "Algorithm Analysis and Design": {
+      "abbreviation": "AAD",
+      "full_name": "Algorithm Analysis and Design",
+      "course_type": "CS"
+    },
+    "Automata Theory": {
+      "abbreviation": "AT",
+      "full_name": "Automata Theory",
+      "course_type": "CS"
+    },
+    "Operating Systems and Networks": {
+      "abbreviation": "OSN",
+      "full_name": "Operating Systems and Networks",
+      "course_type": "CS"
+    },
+    "Data and Applicatons": {
+      "abbreviation": "DA",
+      "full_name": "Data and Applications",
+      "course_type": "CS"
+    },
+    "VLSI Design": {
+      "abbreviation": "VLSI",
+      "full_name": "VLSI Design",
+      "course_type": "ECE"
+    },
+    "Analog Electronic Circuits": {
+      "abbreviation": "AEC",
+      "full_name": "Analog Electronic Circuits",
+      "course_type": "ECE"
+    },
+    "Networks, Signals and Systems": {
+      "abbreviation": "NSS",
+      "full_name": "Networks, Signals and Systems",
+      "course_type": "ECE"
+    },
+    "Electrodynamics": {
+      "abbreviation": "ED",
+      "full_name": "Electrodynamics",
+      "course_type": "ECE"
+    },
+    "Classical Mechanics": {
+      "abbreviation": "CM",
+      "full_name": "Classical Mechanics",
+      "course_type": "ECE"
+    },
+    "Signal Processing": {
+      "abbreviation": "SP",
+      "full_name": "Signal Processing",
+      "course_type": "ECE"
+    },
+    "Embedded Systems Workshop": {
+      "abbreviation": "ESW",
+      "full_name": "Embedded Systems Workshop",
+      "course_type": "ECE"
+    },
+    "Quantum Mechanics": {
+      "abbreviation": "QM",
+      "full_name": "Quantum Mechanics",
+      "course_type": "ECE"
+    },
+    "Probability and Random Processes": {
+      "abbreviation": "PRP",
+      "full_name": "Probability and Random Processes",
+      "course_type": "ECE"
+    },
+    "Probability and Statistics": {
+      "abbreviation": "PS",
+      "full_name": "Probability and Statistics",
+      "course_type": "ECE"
+    },
+    "General and Structural Chemistry": {
+      "abbreviation": "GSC",
+      "full_name": "General and Structural Chemistry",
+      "course_type": "ECE"
+    },
+    "Introduction to Biology": {
+      "abbreviation": "IB",
+      "full_name": "Introduction to Biology",
+      "course_type": "ECE"
+    },
+    "Science - I": {
+      "abbreviation": "SCI1",
+      "full_name": "Science - I",
+      "course_type": "ECE"
+    },
+    "Intro to Linguistics - I": {
+      "abbreviation": "ITL1",
+      "full_name": "Intro to Linguistics - I",
+      "course_type": "CLD"
+    },
+    "Intro to Linguistics - II": {
+      "abbreviation": "ITL2",
+      "full_name": "Intro to Linguistics - II", 
+      "course_type": "CLD"
+    },
+    "Computational Linguistics": {
+      "abbreviation": "CL1",
+      "full_name": "Computational Linguistics",
+      "course_type": "CLD"
+    },
+    "Computational Linguistics - II": {
+      "abbreviation": "CL2",
+      "full_name": "Computational Linguistics - II",
+      "course_type": "CLD"
+    },
+    "Language and Society": {
+      "abbreviation": "LAS",
+      "full_name": "Language and Society",
+      "course_type": "CLD"
+    },
+    "Classical Text Readings - I": {
+      "abbreviation": "CTR1",
+      "full_name": "Classical Text Readings - I",
+      "course_type": "CLD"
+    },
+    "Making of the Contemporary India": {
+      "abbreviation": "MOCI",
+      "full_name": "Making of the Contemporary India",
+      "course_type": "CLD"
+    },
+    "Making of Contemporary World": {
+      "abbreviation": "MOCW",
+      "full_name": "Making of Contemporary World",
+      "course_type": "CLD"
+    },
+    "Spatial Thinking and Practice": {
+      "abbreviation": "STP",
+      "full_name": "Spatial Thinking and Practice",
+      "course_type": "CLD"
+    },
+    "Introduction to Spatial Sciences": {
+      "abbreviation": "ISS",
+      "full_name": "Introduction to Spatial Sciences",
+      "course_type": "CLD"
+    },
+    "Spatial Informatics": {
+      "abbreviation": "SI",
+      "full_name": "Spatial Informatics",
+      "course_type": "CLD"
+    },
+    "Information and Communication": {
+      "abbreviation": "IC",
+      "full_name": "Information and Communication",
+      "course_type": "CLD"
+    },
+    "Thinking and Knowing in the Human Sciences - I": {
+      "abbreviation": "TKHS1",
+      "full_name": "Thinking and Knowing in the Human Sciences - I",
+      "course_type": "CLD"
+    },
+    "Thinking and Knowing in the Human Sciences - II": {
+      "abbreviation": "TKHS2",
+      "full_name": "Thinking and Knowing in the Human Sciences - II",
+      "course_type": "CLD"
+    },
+    "Systems Thinking (Commn, bio, neuro)": {
+      "abbreviation": "ST",
+      "full_name": "Systems Thinking",
+      "course_type": "CLD"
+    },
+    "Introduction to IoT": {
+      "abbreviation": "IoT",
+      "full_name": "Introduction to IoT",
+      "course_type": "CS"
+    }
+  }
+}
