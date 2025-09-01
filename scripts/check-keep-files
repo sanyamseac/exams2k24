@@ -2,8 +2,7 @@
 
 set -e
 
-echo "" > /tmp/keep_files_to_remove.txt
-
+touch /tmp/keep_files_to_remove.txt
 echo "Checking for unnecessary .keep files..."
 
 if [[ -d "papers" ]]; then
