@@ -5,7 +5,7 @@ set -e
 CHANGED_FILES="$*"
 ERROR_COUNT=0
 
-echo "" > /tmp/validation_errors.txt
+touch /tmp/validation_errors.txt
 rm -f /tmp/validation_failed
 
 validate_file_path() {

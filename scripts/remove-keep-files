@@ -8,8 +8,7 @@ if [[ ! -f "/tmp/keep_files_to_remove.txt" ]]; then
 fi
 
 echo "Removing unnecessary .keep files..."
-
-echo "" > /tmp/removed_keep_files.txt
+touch /tmp/removed_keep_files.txt
 
 while read -r keep_file; do
     if [[ -n "$keep_file" && -f "$keep_file" ]]; then
