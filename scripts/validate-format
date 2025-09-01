@@ -1,0 +1,91 @@
+#!/bin/bash
+
+set -e
+
+CHANGED_FILES="$1"
+ERROR_COUNT=0
+
+echo "" > /tmp/validation_errors.txt
+rm -f /tmp/validation_failed
+
+validate_file_path() {
+    local file_path="$1"
+    
+    if [[ ! "$file_path" =~ ^papers/ ]]; then
+        return 0
+    fi
+    
+    if [[ "$file_path" == *"/.keep" ]]; then
+        return 0
+    fi
+    
+    IFS='/' read -ra PATH_PARTS <<< "$file_path"
+    
+    if [[ ${#PATH_PARTS[@]} -lt 4 ]]; then
+        echo "Invalid path depth: $file_path"
+        return 1
+    fi
+    
+    local semester_dir="${PATH_PARTS[1]}"
+    if [[ ! "$semester_dir" =~ ^Semester\ [1-3]$ ]]; then
+        echo "Invalid semester format: '$semester_dir' (expected 'Semester 1', 'Semester 2', or 'Semester 3')"
+        return 1
+    fi
+    
+    local semester_num=$(echo "$semester_dir" | sed 's/Semester //')
+    local course_dir="${PATH_PARTS[2]}"
+    
+    if [[ ! "$course_dir" =~ ^[A-Z]{2}[0-9]\.[0-9]{3}\ .+ ]]; then
+        echo "Invalid course directory format: '$course_dir' (expected 'XX0.000 Course Name')"
+        return 1
+    fi
+    
+    local course_code=$(echo "$course_dir" | cut -d' ' -f1)
+    
+    if ! scripts/check-course-code "$semester_num" "$course_code"; then
+        echo "Invalid course code '$course_code' for semester $semester_num"
+        return 1
+    fi
+    
+    local filename="${PATH_PARTS[3]}"
+    
+    if [[ -d "$file_path" ]]; then
+        return 0
+    fi
+    
+    if [[ ! "$filename" =~ ^$course_code\ .+ ]]; then
+        echo "Filename should start with course code '$course_code': $filename"
+        return 1
+    fi
+    
+    if [[ ! "$filename" =~ \.(pdf|jpg|jpeg|png)$ ]]; then
+        echo "Invalid file extension in: $filename (expected .pdf, .jpg, .jpeg, or .png)"
+        return 1
+    fi
+    
+    return 0
+}
+
+echo "Validating naming conventions..."
+
+if [[ -n "$CHANGED_FILES" ]]; then
+    for file_path in $CHANGED_FILES; do
+        if [[ -n "$file_path" ]]; then
+            echo "Checking: $file_path"
+            if ! validate_file_path "$file_path" 2>/dev/null; then
+                error_msg=$(validate_file_path "$file_path" 2>&1)
+                echo "ERROR: $file_path: $error_msg" >> /tmp/validation_errors.txt
+                ((ERROR_COUNT++))
+            fi
+        fi
+    done
+fi
+
+if [[ $ERROR_COUNT -gt 0 ]]; then
+    echo "Validation failed with $ERROR_COUNT errors"
+    touch /tmp/validation_failed
+    exit 1
+else
+    echo "All files passed validation"
+    echo "Validation passed" > /tmp/validation_errors.txt
+fi

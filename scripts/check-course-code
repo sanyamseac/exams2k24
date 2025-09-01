@@ -1,0 +1,38 @@
+#!/bin/bash
+
+set -e
+
+SEMESTER="$1"
+COURSE_CODE="$2"
+
+if [[ -z "$SEMESTER" || -z "$COURSE_CODE" ]]; then
+    echo "Usage: $0 <semester> <course_code>"
+    exit 1
+fi
+
+if [[ ! -f "scripts/data/courses.csv" ]]; then
+    echo "Error: scripts/data/courses.csv not found!"
+    exit 1
+fi
+
+found=false
+
+while IFS=',' read -r semester course_code full_name; do
+    if [[ "$semester" == "semester" ]]; then
+        continue
+    fi
+
+    semester=$(echo "$semester" | tr -d '"' | xargs)
+    course_code=$(echo "$course_code" | tr -d '"' | xargs)
+
+    if [[ "$semester" == "$SEMESTER" && "$course_code" == "$COURSE_CODE" ]]; then
+        found=true
+        break
+    fi
+done < scripts/data/courses.csv
+
+if [[ "$found" == true ]]; then
+    exit 0
+else
+    exit 1
+fi
