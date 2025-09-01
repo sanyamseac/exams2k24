@@ -1,0 +1,59 @@
+#!/bin/bash
+
+set -e
+
+comment=""
+
+if [[ -f "/tmp/validation_failed" ]]; then
+    comment="## Naming Convention Review Failed
+
+The following issues were found:
+
+"
+    if [[ -f "/tmp/validation_errors.txt" ]]; then
+        comment="$comment$(cat /tmp/validation_errors.txt)
+
+"
+    fi
+    
+    comment="$comment### Expected naming convention:
+
+\`\`\`
+papers/Semester X/COURSE.CODE Course Name/COURSE.CODE Assessment Type.pdf
+\`\`\`
+
+**Examples:**
+- \`papers/Semester 1/CS0.101 Computer Programming/CS0.101 Quiz 1.pdf\`
+- \`papers/Semester 2/MA2.101 Linear Algebra/MA2.101 Endsems.pdf\`
+- \`papers/Semester 1/CS0.101 Computer Programming/CS0.101 Quiz 1 Section A.pdf\`
+
+**Valid assessment types:**
+- \`Endsems\` (End semester exams)
+- \`Midsems\` (Mid semester exams) 
+- \`Quiz 1\`, \`Quiz 2\` (with optional Section A/B)
+- Special variations: \`Solutions\`, \`MakeUp\`
+
+Please fix these issues and push the changes."
+    
+else
+    comment="## Naming Convention Review Passed
+
+All files follow the correct naming convention and folder structure."
+fi
+
+if [[ -f "/tmp/removed_keep_files.txt" && -s "/tmp/removed_keep_files.txt" ]]; then
+    comment="$comment
+
+### Automatic cleanup
+
+Removed unnecessary \`.keep\` files from folders that now contain actual files:
+
+$(cat /tmp/removed_keep_files.txt)"
+fi
+
+echo "$comment" > /tmp/pr_comment.md
+
+echo "Generated PR comment:"
+echo "===================="
+cat /tmp/pr_comment.md
+echo "===================="

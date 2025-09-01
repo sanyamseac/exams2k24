@@ -1,0 +1,22 @@
+#!/bin/bash
+
+set -e
+
+if [[ ! -f "/tmp/keep_files_to_remove.txt" ]]; then
+    echo "No .keep files to remove"
+    exit 0
+fi
+
+echo "Removing unnecessary .keep files..."
+
+echo "" > /tmp/removed_keep_files.txt
+
+while read -r keep_file; do
+    if [[ -n "$keep_file" && -f "$keep_file" ]]; then
+        echo "  - $keep_file"
+        rm "$keep_file"
+        echo "- $keep_file" >> /tmp/removed_keep_files.txt
+    fi
+done < /tmp/keep_files_to_remove.txt
+
+echo "Finished removing .keep files"

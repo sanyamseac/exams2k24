@@ -1,0 +1,35 @@
+#!/bin/bash
+
+set -e
+
+echo "" > /tmp/keep_files_to_remove.txt
+
+echo "Checking for unnecessary .keep files..."
+
+if [[ -d "papers" ]]; then
+    find papers -name ".keep" -type f | while read -r keep_file; do
+        keep_dir=$(dirname "$keep_file")
+        other_files=$(find "$keep_dir" -type f ! -name ".keep" | wc -l)
+
+        if [[ $other_files -gt 0 ]]; then
+            echo "Found unnecessary .keep file: $keep_file (directory has $other_files other files)"
+            echo "$keep_file" >> /tmp/keep_files_to_remove.txt
+        fi
+    done
+fi
+
+if [[ -s /tmp/keep_files_to_remove.txt ]]; then
+    if [[ -n "$GITHUB_OUTPUT" ]]; then
+        echo "files_to_remove<<EOF" >> $GITHUB_OUTPUT
+        cat /tmp/keep_files_to_remove.txt >> $GITHUB_OUTPUT
+        echo "EOF" >> $GITHUB_OUTPUT
+    fi
+
+    echo "Found .keep files to remove:"
+    cat /tmp/keep_files_to_remove.txt
+else
+    echo "No unnecessary .keep files found"
+    if [[ -n "$GITHUB_OUTPUT" ]]; then
+        echo "files_to_remove=" >> $GITHUB_OUTPUT
+    fi
+fi
