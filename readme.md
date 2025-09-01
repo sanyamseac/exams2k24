@@ -1,7 +1,7 @@
 # Exams 2k24
 
 This repository contains question papers of the quizzes, endsem and
-midsem examinations conducted so far for UG1, year 2024, at IIITH.
+midsem examinations conducted so far for UG 2k24 batch at IIIT Hyderabad.
 
 ## Repository Structure
 
