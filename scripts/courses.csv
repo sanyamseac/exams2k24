@@ -1,0 +1,44 @@
+semester,course_code,full_name
+1,CS0.101,Computer Programming
+1,SC4.101,Computing in Sciences I
+1,EC2.101,Digital Systems and Microcontrollers
+1,MA5.101,Discrete Structures
+1,CL1.101,Introduction to Linguistics I
+1,HS4.102,Making of the Contemporary India
+1,EC5.101,Networks Signals and Systems
+1,MA4.101,Real Analysis
+1,GS0.101,Spatial Thinking and Practice
+2,EC2.103,Analog Electronic Circuits
+2,SC1.102,Classical Mechanics
+2,CL3.101,Computational Linguistics I
+2,CS2.201,Computer Systems Organization
+2,SC4.102,Computing in Sciences II
+2,CS1.201,Data Structures and Algorithms
+2,SC1.101,Electrodynamics
+2,SC2.101,General and Structural Chemistry
+2,EC5.102,Information and Communication
+2,CS3.303,Introduction to IoT
+2,GS0.301,Introduction to Spatial Sciences
+2,CL1.102,Introduction to Linguistics II
+2,CS6.201,Introduction to Software Systems
+2,MA2.101,Linear Algebra
+2,HS8.101,Making of Contemporary World
+2,HS0.201,Thinking and Knowing in the Human Sciences-I
+3,CS1.301,Algorithm Analysis and Design
+3,CS1.302,Automata Theory
+3,HS0.301,Classical Text Readings I
+3,CL3.202,Computational Linguistics II
+3,CS4.301,Data and Applications
+3,EC3.202,Embedded Systems Workshop
+3,SC3.101,Introduction to Biology
+3,CL2.203,Language and Society
+3,CS3.301,Operating Systems and Networks
+3,MA6.102,Probability and Random Processes
+3,MA6.101,Probability and Statistics
+3,SC1.203,Quantum Mechanics
+3,SC1.110a,Science I
+3,EC5.201,Signal Processing
+3,GS2.401,Spatial Informatics
+3,EC5.202,Systems Thinking
+3,HS0.202,Thinking and Knowing in the Human Sciences - II
+3,EC2.201,VLSI Design
