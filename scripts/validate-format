@@ -2,7 +2,7 @@
 
 set -e
 
-CHANGED_FILES="$1"
+CHANGED_FILES="$*"
 ERROR_COUNT=0
 
 echo "" > /tmp/validation_errors.txt
@@ -68,18 +68,16 @@ validate_file_path() {
 
 echo "Validating naming conventions..."
 
-if [[ -n "$CHANGED_FILES" ]]; then
-    for file_path in $CHANGED_FILES; do
-        if [[ -n "$file_path" ]]; then
-            echo "Checking: $file_path"
-            if ! validate_file_path "$file_path" 2>/dev/null; then
-                error_msg=$(validate_file_path "$file_path" 2>&1)
-                echo "ERROR: $file_path: $error_msg" >> /tmp/validation_errors.txt
-                ((ERROR_COUNT++))
-            fi
+while IFS= read -r file_path; do
+    if [[ -n "$file_path" ]]; then
+        echo "Checking: $file_path"
+        if ! validate_file_path "$file_path" 2>/dev/null; then
+            error_msg=$(validate_file_path "$file_path" 2>&1)
+            echo "ERROR: $file_path: $error_msg" >> /tmp/validation_errors.txt
+            ((ERROR_COUNT++))
         fi
-    done
-fi
+    fi
+done <<< "$CHANGED_FILES"
 
 if [[ $ERROR_COUNT -gt 0 ]]; then
     echo "Validation failed with $ERROR_COUNT errors"

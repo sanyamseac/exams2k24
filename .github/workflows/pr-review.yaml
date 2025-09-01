@@ -24,9 +24,10 @@ jobs:
 
     - name: Get changed files
       id: changed-files
-      uses: tj-actions/changed-files@v41
+      uses: tj-actions/changed-files@v46
       with:
         files: papers/**
+        separator: '\n'
 
     - name: Validate naming conventions
       run: scripts/validate-format "${{ steps.changed-files.outputs.all_changed_files }}"
