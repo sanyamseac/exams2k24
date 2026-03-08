@@ -16,7 +16,7 @@ exams2k24/
 ├── <papers>/
 │  └── <semester>/                 # Semester 1
 │     └── <subject>/               # CS0.101 Computer Programming
-│        └── <paper>.{pdf,jpg}     # Quiz 1 Section A.pdf
+│        └── <course_code> <paper>.{pdf,jpg}     # CS3.104 Quiz 1 Section A.pdf
 ├── contributing.md
 └── readme.md
 ```
