@@ -14,9 +14,9 @@ The repository is structured as follows:
 ```
 exams2k24/
 ├── <papers>/
-│  └── <semester>/                 # Semester 1
-│     └── <subject>/               # CS0.101 Computer Programming
-│        └── <course_code> <paper>.{pdf,jpg}     # CS3.104 Quiz 1 Section A.pdf
+│  └── <semester>/                               # Semester 1
+│     └── <subject>/                             # CS0.101 Computer Programming
+│        └── <course_code> <paper>.{pdf,jpg}     # CS0.101 Quiz 1 Section A.pdf
 ├── contributing.md
 └── readme.md
 ```
