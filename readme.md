@@ -26,3 +26,4 @@ can be found in the [contributing guide](contributing.md).
 
 ## Relevant Links
 - [CLD2k24 Resources Repository](https://github.com/potatopudding-SSKS/CLD-2k24)
+- [2k24 Repository](https://github.com/santhoshmstr143/2k24)
